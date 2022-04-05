@@ -1,0 +1,52 @@
+.heroes-list__learn-more{ 
+  &-item{
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+
+    margin: 20px 0px 20px 0px;
+    padding: 20px 80px 20px 20px;
+
+    background-color: rgba(100, 100, 100, .8);
+  }
+
+  &-text{
+    height: 100%;
+    width: 45%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    font-size: 19;
+    font-weight: 900;
+  }
+
+  &-img{
+    width: 50%;
+    height: 100%;
+  }
+  
+  &-image{
+    width: 20%;
+    height: 20%;
+    background-color: aqua;
+  }
+
+  &-go-back{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    background-color: greenyellow;
+    width: 80px;
+    height: 40px;
+  }
+}

@@ -24,10 +24,10 @@ interface IValues {
 
 export default function ListItem({nickname, real_name, origin_description, superpowers, catch_phrase, images, _id }: IHero) {
   const [showContent, setShowContent] = React.useState(0)
-  const onDelete = () => {
+  const onDelete = async () => {
     // eslint-disable-next-line no-restricted-globals
     if(confirm(`Delete ${nickname}`)){
-      axios.delete(`http://localhost:5000/api/heroes/${_id}`);
+      await axios.delete(`http://localhost:5000/api/heroes/${_id}`);
       window.location.reload();
     }
   }
@@ -44,8 +44,8 @@ export default function ListItem({nickname, real_name, origin_description, super
     setShowContent(2)
   }
 
-  const onEditSubmit = (values: IValues) => {
-    axios.put(`http://localhost:5000/api/heroes/${_id}`, values);
+  const onEditSubmit = async (values: IValues) => {
+    await axios.put(`http://localhost:5000/api/heroes/${_id}`, values);
     window.location.reload();
   }
 
@@ -126,7 +126,7 @@ export default function ListItem({nickname, real_name, origin_description, super
           <Field className='formik__input' name="images" placeholder="UNKNOWN" />
           <div className='formik__btn-wrapper'>
             <button onClick={onGoBack} className='formik__go-back'>Go Back</button>
-            <button className='formik__submit' type="submit">Submit</button>
+            <button className='formik__submit' type="submit">Edit</button>
           </div>
         </Form>
 

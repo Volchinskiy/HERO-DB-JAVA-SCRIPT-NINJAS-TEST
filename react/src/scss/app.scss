@@ -6,4 +6,9 @@
 @import "./components/learnMore.scss";
 @import "./components/form.scss";
 
-
+.pagination{
+  display: flex;
+  li{
+    margin: 0px 10px 0px 10px;
+  }
+}

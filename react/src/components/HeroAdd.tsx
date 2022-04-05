@@ -14,8 +14,8 @@ export default function HeroAdd() {
     images: string;
   }
 
-  const onSubmit = (values: IValues) => {
-    axios.post("http://localhost:5000/api/heroes", values);
+  const onSubmit = async (values: IValues) => {
+    await axios.post("http://localhost:5000/api/heroes", values);
     window.location.assign('/');
   }
 

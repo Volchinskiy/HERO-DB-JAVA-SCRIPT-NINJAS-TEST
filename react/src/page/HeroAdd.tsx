@@ -50,13 +50,13 @@ export default function HeroAdd() {
           <Field className='formik__input' name="real_name" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Origin Description</label>
-          <Field className='formik__input' name="origin_description" placeholder="UNKNOWN" />
+          <Field as="textarea" className='formik__input' name="origin_description" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Superpowers</label>
-          <Field className='formik__input' name="superpowers" placeholder="UNKNOWN" />
+          <Field as="textarea" className='formik__input' name="superpowers" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Catch Phrase</label>
-          <Field className='formik__input' name="catch_phrase" placeholder="UNKNOWN" />
+          <Field as="textarea" className='formik__input' name="catch_phrase" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Images</label>
           <Field className='formik__input' name="images" placeholder="UNKNOWN" />

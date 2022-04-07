@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/Header';
 import { Routes, Route } from "react-router-dom";
-import HeroList from './components/HeroList';
-import HeroAdd from './components/HeroAdd';
+import HeroList from './page/HeroList';
+import HeroAdd from './page/HeroAdd';
 
 function App() {
   return (

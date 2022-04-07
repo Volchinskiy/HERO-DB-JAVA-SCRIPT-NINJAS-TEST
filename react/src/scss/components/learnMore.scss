@@ -37,6 +37,10 @@
     width: 20%;
     height: 20%;
     background-color: aqua;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &-go-back{

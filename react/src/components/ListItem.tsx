@@ -26,7 +26,7 @@ export default function ListItem({nickname, real_name, origin_description, super
   const [showContent, setShowContent] = React.useState(0)
   const onDelete = async () => {
     // eslint-disable-next-line no-restricted-globals
-    if(confirm(`Delete ${nickname}`)){
+    if(confirm(`Delete "${nickname}"?`)){
       await axios.delete(`http://localhost:5000/api/heroes/${_id}`);
       window.location.reload();
     }
@@ -58,17 +58,7 @@ export default function ListItem({nickname, real_name, origin_description, super
     images: Yup.string().default(''),
   });
 
-  if(showContent === 0) {
-    return(
-      <div className='heroes-list__item'>
-        <div className='heroes-list__nickname'>Nicknam: {nickname}</div>
-        <div className='heroes-list__real-name'>Real Name: {real_name}</div>
-        <button onClick={onLearnMore} className='heroes-list__learn-more-btn'>Learn More</button>
-        <button onClick={onEdit} className='heroes-list__edit-btn'>Edit</button>
-        <button onClick={onDelete} className='heroes-list__delete-btn'>Delete</button>
-      </div>
-    );
-  } else if(showContent === 1){
+ if(showContent === 1){
     return(
       <div className='heroes-list__learn-more'>
         <div className='heroes-list__learn-more-item'>
@@ -82,7 +72,7 @@ export default function ListItem({nickname, real_name, origin_description, super
         </div>
        
         <div className='heroes-list__learn-more-img'>
-          <div className='heroes-list__learn-more-image'></div>
+          <div className='heroes-list__learn-more-image'>Some Img</div>
         </div>
        
         <button onClick={onGoBack} className='heroes-list__learn-more-go-back'>Go Back</button>
@@ -114,13 +104,13 @@ export default function ListItem({nickname, real_name, origin_description, super
           <Field className='formik__input' name="real_name" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Origin Description</label>
-          <Field className='formik__input' name="origin_description" placeholder="UNKNOWN" />
+          <Field as="textarea" className='formik__input' name="origin_description" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Superpowers</label>
-          <Field className='formik__input' name="superpowers" placeholder="UNKNOWN" />
+          <Field as="textarea" className='formik__input' name="superpowers" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Catch Phrase</label>
-          <Field className='formik__input' name="catch_phrase" placeholder="UNKNOWN" />
+          <Field as="textarea" className='formik__input' name="catch_phrase" placeholder="UNKNOWN" />
 
           <label className='formik__label'>Images</label>
           <Field className='formik__input' name="images" placeholder="UNKNOWN" />
@@ -136,10 +126,10 @@ export default function ListItem({nickname, real_name, origin_description, super
   } else {
     return (
       <div className='heroes-list__item'>
-        <div className='heroes-list__nickname'>{nickname}</div>
-        <div className='heroes-list__real-name'>{real_name}</div>
-        <button className='heroes-list__learn-more-btn'>Learn More</button>
-        <button className='heroes-list__edit-btn'>Edit</button>
+        <div className='heroes-list__nickname'>Nicknam: {nickname}</div>
+        <div className='heroes-list__real-name'>Real Name: {real_name}</div>
+        <button onClick={onLearnMore} className='heroes-list__learn-more-btn'>Learn More</button>
+        <button onClick={onEdit} className='heroes-list__edit-btn'>Edit</button>
         <button onClick={onDelete} className='heroes-list__delete-btn'>Delete</button>
       </div>
     )

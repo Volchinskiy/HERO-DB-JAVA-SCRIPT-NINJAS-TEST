@@ -4,11 +4,6 @@
 @import "./components/header.scss";
 @import "./components/heroList.scss";
 @import "./components/learnMore.scss";
-@import "./components/form.scss";
+@import "./components/heroAdd.scss";
+@import "./components/pagination.scss";
 
-.pagination{
-  display: flex;
-  li{
-    margin: 0px 10px 0px 10px;
-  }
-}

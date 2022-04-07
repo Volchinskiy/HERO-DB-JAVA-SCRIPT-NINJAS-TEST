@@ -1,8 +1,8 @@
 import React from 'react'
-import ListItem from './ListItem'
+import ListItem from '../components/ListItem'
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import Pagination from './Pagination';
+import Pagination from '../components/Pagination';
 
 export default function HeroList() {
   const [heroes, setHeroes] = React.useState([]);

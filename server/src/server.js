@@ -5,7 +5,7 @@ import cors from "cors";
 const app = express();
 
 const PORT = 5000;
-const DB_URL = "mongodb+srv://maxim2:CEctPgAabYAEfMHc@cluster0.wdeed.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const DB_URL = "";
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
